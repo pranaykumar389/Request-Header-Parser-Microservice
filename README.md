@@ -6,5 +6,5 @@
 ## Example output:
 
 ```json
-{ "unix": 1450137600, "natural": "December 15, 2015" }
+{ "ipaddress": "::1", "language": "en-US, "software": "Windows NT 10.0; WOW64" }
 ```
