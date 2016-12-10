@@ -8,5 +8,5 @@ app.get('/', function(req, res) {
 
 app.get('/api/findip', function(req, res) {
     var ip = req.ip;
-    
+         
 });
