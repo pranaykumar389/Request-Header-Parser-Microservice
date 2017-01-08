@@ -4,8 +4,11 @@
 1. I can get the IP address, language and operating system for my browser.
 
 ## Example Usage
+
+```url
 https://fcfindyourip.herokuapp.com/
 https://fcfindyourip.herokuapp.com/api/findyourip
+```
 
 ## Example output:
 
