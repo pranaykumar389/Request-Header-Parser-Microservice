@@ -1,25 +1,16 @@
 var express = require('express'),
-    app = express(),
-    requestIp = require('request-ip');
+    app = express();
 
-app.get('/', function(req, res) {
-    res.sendFile(process.cwd() + '/index.html');
-});
+//Port Setup
+var port = process.env.PORT || 8080;
 
-//
-app.get('/api/findip', function(req, res) {
-    // req.ip
-    var ip = requestIp.getClientIp(req),
-        lang = req.headers['accept-language'].split(',')[0],
-        software = req.headers['user-agent'].split(') ')[0].split(' (')[1];
-    
-    res.json({
-        "ipaddress": ip,
-        "language": lang,
-        "software": software
-    });
-});
+//Route
+var Router = require('./routes/route.js');
+app.use('/', Router);
 
-app.listen(8080, function() {
-    console.log('Server Listening on port 8080!');
+//Views
+app.use('/', express.static('views'));
+
+app.listen(port, function() {
+    console.log('Server Listening on port '+ port +'!');
 });
